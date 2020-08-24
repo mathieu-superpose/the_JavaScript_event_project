@@ -245,4 +245,33 @@ leftButtonField.addEventListener("click", firstCardLast);
 // retire toutes les classes du <body> à chaque fois qu'un "keypress" est détecté. 
 // Ensuite seulement tu rajoutes les classes nécessaires.
 
+let headerLogoField = document.getElementsByClassName('navbar-brand')[0];
 
+let bodyField = document.querySelectorAll('body')[0];
+
+function selectLogoField() {
+
+	document.addEventListener('keydown', (event) => {
+	  var x = event.key;
+
+	  if (x == "a" || x == "A") {
+		  bodyField.classList = "col-4";
+		};
+
+	  if (x == "y" || x == "Y") {
+		  bodyField.classList = "col-4 offset-md-4";
+		};
+
+	  if (x == "p" || x == "P") {
+		  bodyField.classList = "offset-md-8";
+		};
+
+	  if (x == "b" || x == "B") {
+		  bodyField.classList = "";
+		};
+
+	}, false);
+};
+
+
+headerLogoField.addEventListener('keypress', selectLogoField);
